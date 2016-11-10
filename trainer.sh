@@ -15,12 +15,12 @@ export MINUTE_MULTIPLIER=2 # use 1 for quick debugging
 
 volume_down () {
     sleep 2
-    open ~/Documents/Programming/AppleScript/deezer_volume_down.app
+    open ~/Documents/Programming/AppleScript/deezer_volume_down_5.app
     sleep 1
 }
 
 volume_up () {
-    open ~/Documents/Programming/AppleScript/deezer_volume_up.app
+    open ~/Documents/Programming/AppleScript/deezer_volume_up_5.app
     sleep 2
 }
 
