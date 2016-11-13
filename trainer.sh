@@ -11,7 +11,7 @@ export SETUP_LENGTH=1
 export WARMUP_LENGTH=2
 export COOLDOWN_LENGTH=2
 export STRETCH_LENGTH=2
-export MINUTE_MULTIPLIER=2 # use 1 for quick debugging
+export MINUTE_MULTIPLIER=60 # use 1 for quick debugging
 
 volume_down () {
     sleep 2
@@ -35,7 +35,7 @@ sleep_with_announcement () {
     for i in `seq 1 $1`;
     do
         echo "1 perc várakozás. ($i)"
-        sleep $(($1 * MINUTE_MULTIPLIER))
+        sleep $MINUTE_MULTIPLIER
         [[ $i -ne $1 ]] && trainer "Még $(($1 - $i)) perc."
     done
 }
