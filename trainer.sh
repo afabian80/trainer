@@ -36,27 +36,27 @@ sleep_with_announcement () {
     do
         echo "1 perc várakozás. ($i)"
         sleep $MINUTE_MULTIPLIER
-        [[ $i -ne $1 ]] && trainer "Még $(($1 - $i)) perc."
+        [[ $i -ne $1 ]] && trainer "Még $(($1 - $i)) percig."
     done
 }
 
-trainer "Szia, Petra vagyok, a te személyi edződ. Akkor kezdjük is meg. Remélem egy kis tornával már bemelegítettél és a pulzusmérő is rajtad van."
+trainer "Szia! Ha készen állsz, akkor kezdjük is meg. Remélem egy kis tornával már bemelegítettél és a pulzusmérő is rajtad van."
 
-trainer "Pattanj a biciklire, indíts egy legalább $((WARMUP_LENGTH + REPETITION*(ACTIVE_LENGTH+PASSIVE_LENGTH) + COOLDOWN_LENGTH)) perces programot és állítsd kettes szintre."
+trainer "Pattanj a biciklire, indíts egy legalább $((5+ WARMUP_LENGTH + REPETITION*(ACTIVE_LENGTH+PASSIVE_LENGTH) + COOLDOWN_LENGTH)) perces programot és állítsd kettes szintre."
 sleep_with_announcement $SETUP_LENGTH
 
 trainer "$WARMUP_LENGTH perc bemelegítés alacsony intenzitáson."
 sleep_with_announcement $WARMUP_LENGTH
 
-for i in `seq 1 $REPETITION`;
+for r in `seq 1 $REPETITION`;
 do
-    trainer "Jön az aktív rész, $ACTIVE_LENGTH perc, a pulzusod legyen $WORK_PULSE körül."
+    trainer "Jön az aktív rész, $ACTIVE_LENGTH percig, a pulzusod legyen $WORK_PULSE körül."
     sleep_with_announcement $ACTIVE_LENGTH
 
-    trainer "És most a pihenő rész, $PASSIVE_LENGTH perc, a pulzusod legyen $REST_PULSE körül."
+    trainer "És most a pihenő rész, $PASSIVE_LENGTH percig, a pulzusod legyen $REST_PULSE körül."
     sleep_with_announcement $PASSIVE_LENGTH
 
-    trainer "Ez volt $([[ "15" =~ $i ]] && echo "az" || echo "a") $i. széria."
+    trainer "Ez volt $([[ "15" =~ $r ]] && echo "az" || echo "a") $r. széria."
 done
 
 trainer "És a végén $COOLDOWN_LENGTH perc levezetés."
