@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export WORK_PULSE=135
-export REST_PULSE=115
+export WORK_PULSE=140
+export REST_PULSE=120
 
 export ACTIVE_LENGTH=4
 export PASSIVE_LENGTH=4
