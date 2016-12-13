@@ -25,10 +25,10 @@ volume_up () {
 }
 
 trainer () {
-    volume_down
+    #volume_down
     echo $1
     say -v Eszter $1
-    volume_up
+    #volume_up
 }
 
 sleep_with_announcement () {
@@ -41,7 +41,8 @@ sleep_with_announcement () {
 }
 
 trainer "Szia! Ha készen állsz, akkor kezdjük is meg. Remélem egy kis tornával már bemelegítettél és a pulzusmérő is rajtad van."
-
+trainer "Húzd fel a redőnyt, húzd el a függönyt és indítsd el a mobil alkalmazást."
+sleep $MINUTE_MULTIPLIER
 trainer "Pattanj a biciklire, indíts egy legalább $((5+ WARMUP_LENGTH + REPETITION*(ACTIVE_LENGTH+PASSIVE_LENGTH) + COOLDOWN_LENGTH)) perces programot és állítsd kettes szintre."
 sleep_with_announcement $SETUP_LENGTH
 
@@ -66,4 +67,4 @@ trainer "Zsírkiráálysáág. Ügyes vagy. Most pedig szállj le és nyújts eg
 sleep_with_announcement $STRETCH_LENGTH
 
 trainer "Ne felejtsd, holnap reggel torna, de utána reggel újra tekerés."
-trainer "Irány a tus, szép napot!"
+trainer "Állítsd le a mobil alkalmazást. Irány a tus, szép napot!"
